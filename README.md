@@ -7,6 +7,10 @@ Authentication
 
 Your project this week is to build a web app that authenticates users and stores user-specific data in a PostgreSQL database.
 
+Our app, ${placeholder} is looking at disrupting 'doing a coffee run'.
+Instead of asking around your office and trying to remember everyone's drink order, ${placeholder} lets you see everyone's drink order wherever they are: At their computer, in the queue at starbucks, even ${somewhere else}!
+Simply log on and put in your drink order, and your coworkers will be able to access that data from their app. We at BDJS know that tastes change and develop over time, so if you need to change your coffee order, that's no problem! Just log back in and change your order.
+
 ### User stories 
 #### Core 
 - As a user, I want to: submit information to your site for anyone to see
