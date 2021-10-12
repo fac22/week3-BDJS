@@ -12,7 +12,8 @@ Your project this week is to build a web app that authenticates users and stores
 - As a user, I want to: submit information to your site for anyone to see
 - As a user, I want to: come back to your site later and see what I posted is still there
 - As a user, I want to: be the only person allowed to delete my stuff
-- Since this project is open-ended you’ll need to write your own more specific user stories once you know what you want to build.
+- As a user who needs a coffee, I want to: Log in and share my favourite drink
+- As a user who is buying coffee, I want to: View everyone's coffee order, so I know what to get them from Starbucks
 
 ### Acceptance Criteria 
 - Forms for users to sign up and log in
