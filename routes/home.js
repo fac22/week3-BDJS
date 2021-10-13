@@ -7,7 +7,7 @@ function get(request, response) {
     model.getSession(sid).then((session) => {
       const content = `
       <h1>Hello ${session.user.name}</h1>
-      <form action="/log-out" method="POST">
+      <form action="/logout" method="POST">
         <button>Log out</button>
       </form>
     `;
@@ -17,9 +17,9 @@ function get(request, response) {
   } else {
     const content = `
     <h1>Hello anonymous</h1>
-    <a href="/sign-up">Sign up</a>
+    <a href="/signup">Sign up</a>
     <span> | </span>
-    <a href="/log-in">Log in</a>
+    <a href="/login">Log in</a>
     `;
     const title = `e-Coffee Enter`;
     response.send(buildPage(title, content));
