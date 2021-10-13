@@ -9,20 +9,23 @@ function get(request, response) {
   <form action="signup" method="POST">
     <label for="name">Name</label>
     <input type="text" id="name" name="name">
+    <label for="coffeeWish">My Coffee Wish</label>
+    <input type="text" id="coffeeWish" name="coffeeWish">
+    <button>Sign up</button>
     <label for="email">Email</label>
     <input type="email" id="email" name="email">
     <label for="password">Password</label>
     <input type="password" id="password" name="password">
     <button>Sign up</button>
-  </form>
+    </form>
   `;
   response.send(buildPage(title, content));
 }
 
 function post(request, response) {
-  const { email, password, name } = request.body;
+  const { email, coffeeWish, password, name } = request.body;
   auth
-    .createUser(email, password, name)
+    .createUser(name, email, password, coffeeWish)
     .then(auth.saveUserSession)
     .then((sid) => {
       response.cookie('sid', sid, auth.COOKIE_OPTIONS);

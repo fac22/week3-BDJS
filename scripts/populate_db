@@ -3,5 +3,5 @@
 # exit immediately on error
 set -e
 
-psql sessionauthdb -q -f "./workshop/database/init.sql"
+psql sessionauthdb -q -f "./database/init.sql"
 echo "Populated database 'sessionauthdb' with initial data"

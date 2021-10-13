@@ -1,44 +1,39 @@
 const db = require('./connection.js');
 
-function createUser(email, hash, name) {
-  // Modify it
+async function createUser(name, email, hash, drinkorder) {
   const INSERT_USER = `
-    INSERT INTO users (email, password, name) VALUES ($1, $2, $3)
-    RETURNING id, email, name
+  INSERT INTO users (name, email, hash, drinkorder) VALUES ($1, $2, $3, $4)
+  RETURNING id, email, name
   `;
-  return db
-    .query(INSERT_USER, [email, hash, name])
-    .then((result) => result.rows[0]);
+  const query = await db.query(INSERT_USER, [name, email, hash, drinkorder]);
+  return await query.rows[0].sid;
 }
 
-function getUser(email) {
+async function getUser(email) {
   const SELECT_USER = `
     SELECT id, email, password, name FROM users WHERE email=$1
   `;
-  return db.query(SELECT_USER, [email]).then((result) => result.rows[0]);
+  const user = await db.query(SELECT_USER, [email]);
+  return user.rows[0];
 }
 
-function getSession(sid) {
+async function getSession(sid) {
   const SELECT_SESSION = 'SELECT data FROM sessions WHERE sid=$1';
-  return db.query(SELECT_SESSION, [sid]).then((result) => {
-    const singleResult = result.rows[0];
-    return singleResult && singleResult.data;
-  });
+  const session = await db.query(SELECT_SESSION, [sid]);
+  const singleResult = session.rows[0];
+  return singleResult && singleResult.data;
 }
 
-function createSession(sid, data) {
-  const INSERT_SESSION = `
-    INSERT INTO sessions (sid, data) VALUES ($1, $2)
-    RETURNING sid
-  `;
-  return db
-    .query(INSERT_SESSION, [sid, data])
-    .then((result) => result.rows[0].sid);
+async function createSession(sid, json) {
+  const INSERT_SESSION = ` INSERT INTO sessions (sid, data) VALUES ($1, $2)
+    RETURNING sid`;
+  const query = await db.query(INSERT_SESSION, [sid, json]);
+  return query.rows[0].sid;
 }
 
-function deleteSession(sid) {
+async function deleteSession(sid) {
   const DELETE_SESSION = 'DELETE FROM sessions WHERE sid=$1';
-  return db.query(DELETE_SESSION, [sid]);
+  return await db.query(DELETE_SESSION, [sid]);
 }
 
 module.exports = {
