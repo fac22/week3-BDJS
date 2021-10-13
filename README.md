@@ -46,6 +46,7 @@ Simply log on and put in your drink order, and your coworkers will be able to ac
 - As a user, I want to: be the only person allowed to delete my stuff
 - As a user who needs a coffee, I want to: Log in and share my favourite drink
 - As a user who is buying coffee, I want to: View everyone's coffee order, so I know what to get them from Starbucks
+- As a user who already uses our app, I want to: Edit my coffee order, and my name, in case either of them change.
 
 ### Acceptance Criteria
 
