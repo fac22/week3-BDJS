@@ -18,13 +18,13 @@ server.use(cookieParser(process.env.COOKIE_SECRET));
 
 server.get('/', home.get);
 
-server.get('/sign-up', signup.get);
-server.post('/sign-up', signup.post);
+server.get('/signup', signup.get);
+server.post('/signup', signup.post);
 
-server.get('/log-in', login.get);
-server.post('/log-in', login.post);
+server.get('/login', login.get);
+server.post('/login', login.post);
 
-server.post('/log-out', logout.post);
+server.post('/logout', logout.post);
 
 const PORT = process.env.PORT || 3000;
 

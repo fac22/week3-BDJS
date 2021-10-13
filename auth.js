@@ -1,7 +1,13 @@
-// Imports
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const model = require('./database/model');
+
+const COOKIE_OPTIONS = {
+  httpOnly: true,
+  maxAge: 600000,
+  sameSite: 'strict',
+  signed: true,
+};
 
 async function verifyUser(email, password) {
   const user = await model.getUser(email);
@@ -14,21 +20,14 @@ async function verifyUser(email, password) {
   }
 }
 
+async function saveUserSession(user) {
+  const sid = await crypto.randomBytes(18).toString('base64');
+  return await model.createSession(sid, { user });
+}
+
 async function createUser(name, email, password, drinkorder) {
   const hash = await bcrypt.hash(password, 10);
   return await model.createUser(name, email, hash, drinkorder);
 }
 
-function saveUserSession(user) {
-  const sid = crypto.randomBytes(18).toString('base64');
-  return model.createSession(sid, { user });
-}
-
-const COOKIE_OPTIONS = {
-  httpOnly: true,
-  maxAge: 600000,
-  sameSite: 'strict',
-  signed: true,
-};
-// Export to /routes
-module.exports = { verifyUser, createUser, saveUserSession, COOKIE_OPTIONS };
+module.exports = { createUser, saveUserSession, verifyUser, COOKIE_OPTIONS };
