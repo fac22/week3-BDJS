@@ -25,7 +25,7 @@ Quality Assurance &rarr; Danilo
 
 ## Our Mistakes & Fixes
 
-- `npm install dotenv`
+- `npm install dotenv` &rarr; needed this to run our local server
 
 ## Description
 
