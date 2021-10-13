@@ -18,10 +18,14 @@ DevOps, Deployment &rarr; Ji
 Facilitator, Scrum &rarr; Barbara
 Quality Assurance &rarr; Danilo
 
-## Links
+## Our Links
 
 - Installation commands (Thanks, Ji :+1:): <https://hackmd.io/MkbkWLQ1QKiqR2VJmfjing>
 - Miro board: <https://miro.com/app/board/o9J_lqhxUgs=/>
+
+## Our Mistakes & Fixes
+
+- `npm install dotenv`
 
 ## Description
 
