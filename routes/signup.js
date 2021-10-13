@@ -11,7 +11,6 @@ function get(request, response) {
     <input type="text" id="name" name="name">
     <label for="coffeeWish">My Coffee Wish</label>
     <input type="text" id="coffeeWish" name="coffeeWish">
-    <button>Sign up</button>
     <label for="email">Email</label>
     <input type="email" id="email" name="email">
     <label for="password">Password</label>
