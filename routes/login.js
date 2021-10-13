@@ -21,8 +21,11 @@ function post(request, response) {
   //
   const { email, password } = request.body;
   auth
+    // match passwords
     .verifyUser(email, password)
+    // make new session with session id
     .then(auth.saveUserSession)
+    // make a cookie
     .then((sid) => {
       response.cookie('sid', sid, auth.COOKIE_OPTIONS);
       response.redirect('/');
