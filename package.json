@@ -1,0 +1,28 @@
+{
+  "name": "week3-bdjs",
+  "version": "1.0.0",
+  "description": "Authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "cypress open",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac22/week3-BDJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac22/week3-BDJS/issues"
+  },
+  "homepage": "https://github.com/fac22/week3-BDJS#readme",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
