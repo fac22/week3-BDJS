@@ -21,7 +21,7 @@ function get(request, response) {
     <span> | </span>
     <a href="/log-in">Log in</a>
     `;
-    const title = `e-Coffee`;
+    const title = `e-Coffee Enter`;
     response.send(buildPage(title, content));
   }
 }
