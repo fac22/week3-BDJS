@@ -5,8 +5,8 @@ const { buildPage } = require('../template.js');
 function get(request, response) {
   const title = `coffee-login`;
   const content = `
-    <h1>Log in</h1>
-    <form action="login" method="POST">
+    <h2>Nice to have you back!</h2>
+    <form action="login" class="flex flex-column" method="POST">
       <label for="email">Email</label>
       <input type="email" id="email" name="email">
       <label for="password">Password</label>
@@ -32,7 +32,7 @@ function post(request, response) {
     })
     .catch((error) => {
       console.error(error);
-      response.send(`<h1>User not found</h1>`);
+      response.send(buildPage(`Error`, `<h2>User not found</h2>`));
     });
   // console.log('Logging in...');
   // response.redirect('/');
