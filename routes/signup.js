@@ -24,8 +24,7 @@ function get(request, response) {
     <div id="emailError" class="error"></div>
 
     <label for="password">Password <span aria-hidden="true">*</span></label>
-    <input type="password" id="password" name="password"  pattern=".*\d.*"
-    minlength="8" required />
+    <input type="password" id="password" name="password" minlength="8" required />
     <p id="passwordError" class="error"></p>
     <button>Sign up</button>
     <script src="./index.js"></script>
