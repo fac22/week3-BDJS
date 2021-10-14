@@ -4,7 +4,7 @@ const { buildPage } = require('../template.js');
 function get(request, response) {
   //
   const title = `coffee-signup`;
-  const content = `
+  const content = /*html*/ `
   <h1>Create an account</h1>
   <form action="signup" method="POST">
     <label for="name">Name</label>
@@ -16,6 +16,7 @@ function get(request, response) {
     <label for="password">Password</label>
     <input type="password" id="password" name="password">
     <button>Sign up</button>
+    <script src="./index.js"></script>
     </form>
   `;
   response.send(buildPage(title, content));

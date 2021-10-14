@@ -12,6 +12,8 @@ const server = express();
 
 server.use(express.urlencoded({ extended: false }));
 
+server.use(express.static('./public'));
+
 // COOKIE_SECRET lives in .env to stop it ending up on GitHub
 // it is used to sign cookies so we can trust them
 server.use(cookieParser(process.env.COOKIE_SECRET));
