@@ -27,6 +27,13 @@ Quality Assurance &rarr; Danilo
 
 - `npm install dotenv` &rarr; needed this to run our local server
 
+- Why doesn't sign-up work?
+  - needed to customise our ./scripts/create_db, ./scripts/populate_db
+  - .env:
+    - Database_URL: local psql address
+    - add COOKIE_SECRET
+  - change async functions back to .then()
+
 ## Description
 
 <https://learn.foundersandcoders.com/course/syllabus/apprenticeship/authentication/project/>
