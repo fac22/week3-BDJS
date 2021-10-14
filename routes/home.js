@@ -21,10 +21,11 @@ function get(request, response) {
       if (sid) {
         return model.getSession(sid).then((session) => {
           return `<h1>Hello ${session.user.name}</h1>
-        <form action="/logout" method="POST">
-          <button>Log out</button>
-        </form>
-        ${coffeeList}`;
+          <a href="/edituser"> Edit my details </a>
+          <form action="/logout" method="POST">
+           <button>Log out</button>
+          </form>  
+          ${coffeeList}`;
         });
       } else {
         return `
