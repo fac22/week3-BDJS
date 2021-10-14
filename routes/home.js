@@ -12,7 +12,8 @@ function get(request, response) {
       // console.log(data);
       return data
         .map(
-          (coffee) => /*html*/ `<li>${coffee.name} : ${coffee.drinkorder}</li>`
+          (coffee) =>
+            /*html*/ `<li class="flex"><div class= "flex-row__one">${coffee.name}</div> <div class="flex-row__two"><span aria-hidden="true">☕️</span> ${coffee.drinkorder}</class=></li>`
         )
         .join('');
     })
@@ -24,23 +25,41 @@ function get(request, response) {
           .then((session) => session.user.email)
           .then((userMail) => model.getUser(userMail))
           .then((user) => {
-            return `<h1>Hello ${user.name}</h1>
+            return /*html*/ `
+            <section>
+            <h2>Hello ${user.name}</h2>
+            <div>
           <a href="/edituser"> Edit my details </a>
+          </div>
+          <div>
           <form action="/logout" method="POST">
-           <button>Log out</button>
+          <button>Log out</button>
           </form>  
+          <div>
+        <div>
           <form action="/deletecoffee" method="POST">
           <button>I don't like coffee</button>
             </form>
-          ${coffeeList}`;
+            </div>
+            </section>
+            <section>
+          ${coffeeList}
+          </section>`;
           });
       } else {
         return /*html*/ `
-      <h1>Hello anonymous</h1>
+        <section>
+      <h2>What's your order?</h2>
+      <div class="centre">
       <a href="/signup">Sign up</a>
-      <span> | </span>
       <a href="/login">Log in</a>
+      </div>
+      </section>
+      <section>
+      <div>
       ${coffeeList}
+      </div>
+      </section>
       `;
       }
     })
