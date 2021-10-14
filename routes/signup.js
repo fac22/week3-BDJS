@@ -4,18 +4,31 @@ const { buildPage } = require('../template.js');
 function get(request, response) {
   //
   const title = `coffee-signup`;
-  const content = `
+  const content = /*html*/ `
   <h1>Create an account</h1>
   <form action="signup" method="POST">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name">
-    <label for="coffeeWish">My Coffee Wish</label>
-    <input type="text" id="coffeeWish" name="coffeeWish">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
+    <label for="name">Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" required />
+    <label for="coffeeWish">My Coffee Wish <span aria-hidden="true">*</span></label>
+    <select name="coffeeWish" id="coffeeWish" required />
+    <option value="Espresso">Espresso</option>
+    <option value="Americano">Americano</option>
+    <option value="Filter Coffee">Filter Coffee</option>
+    <option value="Latte">Latte</option>
+    <option value="Cappucino">Cappucino</option>
+    <option value="Macchiato">Macchiato</option>
+    <option value="Flat white">Flat white</option>
+  </select>
+    <label for="email">Email <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" required />
+    <div id="emailError" class="error"></div>
+
+    <label for="password">Password <span aria-hidden="true">*</span></label>
+    <input type="password" id="password" name="password"  pattern=".*\d.*"
+    minlength="8" required />
+    <p id="passwordError" class="error"></p>
     <button>Sign up</button>
+    <script src="./index.js"></script>
     </form>
   `;
   response.send(buildPage(title, content));
