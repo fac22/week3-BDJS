@@ -1,3 +1,7 @@
+beforeEach(() => {
+  cy.task('resetDb');
+});
+
 describe('home page', () => {
   it('displays Sign up and Log in', () => {
     cy.visit('/');
