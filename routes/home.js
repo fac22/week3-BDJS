@@ -1,29 +1,42 @@
-const model = require('../database/model.js');
-const { buildPage } = require('../template.js');
+const model = require("../database/model.js");
+const { buildPage } = require("../template.js");
 
 function get(request, response) {
   const sid = request.signedCookies.sid;
-  if (sid) {
-    model.getSession(sid).then((session) => {
-      const content = `
-      <h1>Hello ${session.user.name}</h1>
-      <form action="/logout" method="POST">
-        <button>Log out</button>
-      </form>
-    `;
-      const title = `e-Coffee Home`;
-      response.send(buildPage(title, content));
-    });
-  } else {
-    const content = `
-    <h1>Hello anonymous</h1>
-    <a href="/signup">Sign up</a>
-    <span> | </span>
-    <a href="/login">Log in</a>
-    `;
-    const title = `e-Coffee Enter`;
-    response.send(buildPage(title, content));
-  }
+
+  const title = `e-Coffee Home`;
+
+  return model
+    .showPosts()
+    .then((data) => {
+      console.log(data);
+      return data
+        .map(
+          (coffee) => /*html*/ `<li>${coffee.name} : ${coffee.drinkorder}</li>`
+        )
+        .join("");
+    })
+    .then((coffeeList) => {
+      console.log(coffeeList);
+      if (sid) {
+        return model.getSession(sid).then((session) => {
+          return `<h1>Hello ${session.user.name}</h1>
+        <form action="/logout" method="POST">
+          <button>Log out</button>
+        </form>
+        ${coffeeList}`;
+        });
+      } else {
+        return `
+      <h1>Hello anonymous</h1>
+      <a href="/signup">Sign up</a>
+      <span> | </span>
+      <a href="/login">Log in</a>
+      ${coffeeList}
+      `;
+      }
+    })
+    .then((page) => response.send(buildPage(title, page)));
 }
 
 module.exports = { get };
