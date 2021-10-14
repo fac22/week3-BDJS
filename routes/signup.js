@@ -1,5 +1,5 @@
-const auth = require('../auth.js');
-const { buildPage } = require('../template.js');
+const auth = require("../auth.js");
+const { buildPage } = require("../template.js");
 
 function get(request, response) {
   //
@@ -24,7 +24,7 @@ function get(request, response) {
     <div id="emailError" class="error"></div>
 
     <label for="password">Password <span aria-hidden="true">*</span></label>
-    <input type="password" id="password" name="password"  pattern=".*\d.*"
+    <input type="password" id="password" name="password"  pattern=".*\d.*"  
     minlength="8" required />
     <p id="passwordError" class="error"></p>
     <button>Sign up</button>
@@ -40,8 +40,8 @@ function post(request, response) {
     .createUser(name, email, password, coffeeWish)
     .then(auth.saveUserSession)
     .then((sid) => {
-      response.cookie('sid', sid, auth.COOKIE_OPTIONS);
-      response.redirect('/');
+      response.cookie("sid", sid, auth.COOKIE_OPTIONS);
+      response.redirect("/");
     })
     .catch((error) => {
       console.error(error);
