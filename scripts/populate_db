@@ -3,5 +3,5 @@
 # exit immediately on error
 set -e
 
-psql sessionauthdb -q -f "./database/init.sql"
-echo "Populated database 'sessionauthdb' with initial data"
+psql coffee_db -q -f "./database/init.sql"
+echo "Populated database 'coffee_db' with initial data"
