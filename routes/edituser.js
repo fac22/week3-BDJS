@@ -1,10 +1,10 @@
 // Importing
-const model = require("../database/model");
-const auth = require("../auth.js");
-const { buildPage } = require("../template.js");
+const model = require('../database/model');
+const auth = require('../auth.js');
+const { buildPage } = require('../template.js');
 
 function get(request, response) {
-  const title = "Edit Profile";
+  const title = 'Edit Profile';
   // Who is logged in right now?
   const sid = request.signedCookies.sid;
   model.getSession(sid).then((session) => {
@@ -23,7 +23,7 @@ function get(request, response) {
       <option value="Macchiato">Macchiato</option>
       <option value="Flat white">Flat white</option>
     </select>
-    <button> Save Changes</button>
+    <button>Save Changes</button>
     </form>`;
     response.send(buildPage(title, content));
   });
@@ -42,7 +42,7 @@ function post(request, response) {
       .then((session) => session.user.email)
       // Update users row for this email
       .then((sessionMail) => model.updateUser(sessionMail, name, coffeeWish))
-      .then(() => response.redirect("/"))
+      .then(() => response.redirect('/'))
   );
 }
 

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fac22/week3-BDJS#readme",
   "devDependencies": {
+    "cypress": "^8.6.0",
     "eslint": "^8.0.0",
     "nodemon": "^2.0.13"
   },

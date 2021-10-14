@@ -33,12 +33,12 @@ function get(request, response) {
           </div>
           <div>
           <form action="/logout" method="POST">
-          <button>Log out</button>
+           <button id="logoutBtn">Log out</button>
           </form>  
           <div>
         <div>
           <form action="/deletecoffee" method="POST">
-          <button>I don't like coffee</button>
+          <button id="deleteBtn" >I don't like coffee</button>
             </form>
             </div>
             </section>
