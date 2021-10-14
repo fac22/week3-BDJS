@@ -24,13 +24,14 @@ function get(request, response) {
           .then((session) => session.user.email)
           .then((userMail) => model.getUser(userMail))
           .then((user) => {
-            return `<h1>Hello ${user.name}</h1>
+            return /*html*/ `
+            <h1>Hello ${user.name}</h1>
           <a href="/edituser"> Edit my details </a>
           <form action="/logout" method="POST">
-           <button>Log out</button>
+           <button id="logoutBtn">Log out</button>
           </form>  
           <form action="/deletecoffee" method="POST">
-          <button>I don't like coffee</button>
+          <button id="deleteBtn" >I don't like coffee</button>
             </form>
           ${coffeeList}`;
           });
