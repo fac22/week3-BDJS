@@ -16,6 +16,7 @@ Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>"
 
 ## Roles
 
+
 - UX &rarr; Sasha
 - DevOps, Deployment &rarr; Ji
 - Facilitator, Scrum &rarr; Barbara
@@ -27,6 +28,7 @@ Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>"
 
 - Installation commands (Thanks, Ji :+1:): <https://hackmd.io/MkbkWLQ1QKiqR2VJmfjing>
 - Miro board: <https://miro.com/app/board/o9J_lqhxUgs=/>
+<img width="712" alt="Screenshot 2021-10-15 at 11 25 01" src="https://user-images.githubusercontent.com/78619809/137473754-fefeaa4e-8ee7-4691-9d1d-57316c1c941f.png">
 
 <iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lqhxUgs=/?moveToViewport=-615,-218,2469,1150" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 
