@@ -1,83 +1,83 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
-  --one: #7d5a50;
-  --two: #b4846c;
-  --three: #e5b299;
-  --four: #fcdec0;
-  --white: rgb(228, 225, 225);
+	--one: #7d5a50;
+	--two: #b4846c;
+	--three: #e5b299;
+	--four: #fcdec0;
+	--white: rgb(228, 225, 225);
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
-  background-color: var(--three);
-  padding: 0.5px;
+	font-family: 'Inconsolata', monospace;
+	background-color: var(--three);
+	padding: 0.5px;
 }
 
 .main {
-  background-color: var(--two);
-  margin: 0 auto;
-  max-width: 70vw;
-  min-height: 80vh;
-  outline: 2px solid var(--four);
-  outline-offset: -5px;
-  padding: 5px;
-  overflow-y: auto;
+	background-color: var(--two);
+	margin: 0 auto;
+	max-width: 70vw;
+	min-height: 80vh;
+	outline: 2px solid var(--four);
+	outline-offset: -5px;
+	padding: 5px;
+	overflow-y: auto;
 }
 
 li {
-  font-size: 1.8rem;
-  list-style: none;
-  max-width: 60%;
-  margin: auto;
-  margin-top: 1rem;
+	font-size: 1.8rem;
+	list-style: none;
+	max-width: 60%;
+	margin: auto;
+	margin-top: 1rem;
 }
 
 header {
-  font-family: 'Kanit';
-  text-align: center;
+	font-family: 'Kanit';
+	text-align: center;
 }
 h1 {
-  font-size: 3rem;
+	font-size: 3rem;
 }
 h2 {
-  font-size: 2rem;
-  text-align: center;
-  padding: 2px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+	font-size: 2rem;
+	text-align: center;
+	padding: 2px;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 
 a,
 button,
 input,
 select {
-  border-radius: 5px;
+	border-radius: 5px;
 }
 button,
 a {
-  margin: 2rem;
-  margin-top: 2rem;
-  padding: 0.3rem;
-  text-decoration: none;
-  size: 2rem;
-  background-color: var(--four);
-  color: var(--one);
-  font-size: 1.8rem;
+	margin: 2rem;
+	margin-top: 2rem;
+	padding: 0.3rem;
+	text-decoration: none;
+	size: 2rem;
+	background-color: var(--four);
+	color: var(--one);
+	font-size: 1.8rem;
 }
 
 a:visited {
-  color: var(--one);
+	color: var(--one);
 }
 
 button,
 a:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+	cursor: pointer;
+	transform: scale(1.1);
 }
 
 /* button {
@@ -91,80 +91,81 @@ a:hover {
 
 input,
 select {
-  background-color: var(--four);
-  border: solid 1px var(--three);
+	background-color: var(--four);
+	border: solid 1px var(--three);
 }
 
 .flex {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5em;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .flex-row__one {
-  display: block;
-  margin-right: 3rem;
+	display: block;
+	margin-right: 3rem;
 }
 
 .flex-row__two {
-  margin-left: 3rem;
+	margin-left: 3rem;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .centre {
-  text-align: center;
+	text-align: center;
 }
 
 label {
-  font-size: 1.8rem;
+	font-size: 1.8rem;
 }
 
 input,
 select {
-  font-size: 1.8rem;
+	font-size: 1.8rem;
 }
 
 select:focus,
 input:focus {
-  outline: none;
+	outline: none;
 }
 
 .margin-bottom {
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .align-items__c {
-  align-items: center;
+	align-items: center;
 }
 
 .margin-auto {
-  max-width: 60%;
-  margin: auto;
+	max-width: 60%;
+	margin: auto;
 }
 
 .flex-left {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 0.5em;
-  margin-top: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 0.5em;
+	margin-top: 2rem;
 }
 
 .form-left_one {
-  flex: 1;
+	flex: 1;
 }
 
 .form-left_two {
-  margin-left: 2rem;
-  flex: 2;
+	margin-left: 2rem;
+	flex: 2;
 }
 
 [id*='Error'] {
-  color: rgb(70, 56, 12);
-  font-size: 1.5rem;
+	color: rgb(70, 56, 12);
+	font-size: 1.5rem;
 }
