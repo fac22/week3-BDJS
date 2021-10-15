@@ -32,7 +32,7 @@ body {
 li {
   font-size: 1.8rem;
   list-style: none;
-  max-width: 40vw;
+  max-width: 60%;
   margin: auto;
   margin-top: 1rem;
 }
@@ -51,12 +51,14 @@ h2 {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
+
 a,
 button,
 input,
 select {
   border-radius: 5px;
 }
+button,
 a {
   margin: 2rem;
   margin-top: 2rem;
@@ -72,23 +74,20 @@ a:visited {
   color: var(--one);
 }
 
+button,
 a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-button {
+/* button {
   font-size: 1.2rem;
   font-family: 'Kanit';
   color: var(--three);
   border: solid 1px var(--white);
   background-color: var(--one);
   padding: 2px;
-}
-
-button:hover {
-  cursor: pointer;
-}
+} */
 
 input,
 select {
@@ -98,21 +97,22 @@ select {
 
 .flex {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0.5em;
   align-items: center;
 }
 
 .flex-row__one {
-  flex: 1;
+  display: block;
+  margin-right: 3rem;
 }
 
 .flex-row__two {
-  flex: 2;
-  text-align: center;
+  margin-left: 3rem;
 }
 
 .flex-column {
+  display: flex;
   flex-direction: column;
 }
 
@@ -132,4 +132,39 @@ select {
 select:focus,
 input:focus {
   outline: none;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
+}
+
+.align-items__c {
+  align-items: center;
+}
+
+.margin-auto {
+  max-width: 60%;
+  margin: auto;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.5em;
+  margin-top: 2rem;
+}
+
+.form-left_one {
+  flex: 1;
+}
+
+.form-left_two {
+  margin-left: 2rem;
+  flex: 2;
+}
+
+[id*='Error'] {
+  color: rgb(70, 56, 12);
+  font-size: 1.5rem;
 }

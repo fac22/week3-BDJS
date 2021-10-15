@@ -6,15 +6,15 @@ function get(request, response) {
   const title = `coffee-signup`;
   const content = /*html*/ `
   <h2>Create an account</h2>
-  <div>
-  <form action="signup" class="flex flex-column" method="POST">
-  <div class="flex">
-    <label for="name" class="flex-row__one">Name <span aria-hidden="true">*</span></label>
-    <input type="text" id="name" name="name" required />
-    </div>
-    <div class="flex">
-    <label for="coffeeWish" class="flex-row__one">My Coffee Wish <span aria-hidden="true">*</span></label>
-    <select name="coffeeWish" id="coffeeWish" class="flex-row__two" required />
+  <div class="margin-auto">
+  <form action="signup" class=" flex-column" method="POST">
+  <div class="flex-left">
+    <label for="name" class="form-left_one">Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" class="form-left_two" required />
+  </div>
+  <div class="flex-left">
+    <label for="coffeeWish" class="form-left_one">My Coffee Wish <span aria-hidden="true">*</span></label>
+    <select name="coffeeWish" id="coffeeWish" class="form-left_two" required />
     <option value="Espresso">Espresso</option>
     <option value="Americano">Americano</option>
     <option value="Filter Coffee">Filter Coffee</option>
@@ -24,16 +24,16 @@ function get(request, response) {
     <option value="Flat white">Flat white</option>
   </select>
   </div>
-  <div class="flex">
-    <label for="email" class="flex-row__one">Email <span aria-hidden="true">*</span></label>
-    <input type="email" id="email" name="email" class="flex-row__two" required />
+  <div class="flex-left">
+    <label for="email" class="form-left_one">Email <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" class="form-left_two" required />
     </div>
-    <div id="emailError" class="error"></div>
-    <div class="flex">
-    <label for="password" class="flex-row__one">Password <span aria-hidden="true">*</span></label>
-    <input type="password" id="password" class="flex-row__two" name="password" minlength="8" required />
+    <p id="emailError" class="error"></p>
+    <div class="flex-left">
+    <label for="password" class="form-left_one">Password <span aria-hidden="true">*</span></label>
+    <input type="password" id="password" class="form-left_two" name="password" minlength="8" required />
+    </div>
     <p id="passwordError" class="error"></p>
-    </div>
     <button>Sign up</button>
     <script src="./index.js"></script>
     </form>
