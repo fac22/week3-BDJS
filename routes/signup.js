@@ -2,15 +2,15 @@ const auth = require('../auth.js');
 const { buildPage } = require('../template.js');
 
 function get(request, response) {
-	//
-	const title = `coffee-signup`;
-	const content = /*html*/ `
+  //
+  const title = `coffee-signup`;
+  const content = /*html*/ `
   <h2>Create an account</h2>
   <div class="margin-auto">
   <form action="signup" class=" flex-column" method="POST">
   <div class="flex-left">
     <label for="name" class="form-left_one">Name <span aria-hidden="true">*</span></label>
-    <input type="text" id="name" name="name" class="form-left_two" required maxlength="20" placeholder="max 20 characters" />
+    <input type="text" id="name" name="name" class="form-left_two" required maxlength="20" placeholder="max 20 characters" required />
   </div>
   <div class="flex-left">
     <label for="coffeeWish" class="form-left_one">My Coffee Wish <span aria-hidden="true">*</span></label>
@@ -39,22 +39,22 @@ function get(request, response) {
     </form>
     </div>
   `;
-	response.send(buildPage(title, content));
+  response.send(buildPage(title, content));
 }
 
 function post(request, response) {
-	const { email, coffeeWish, password, name } = request.body;
-	auth
-		.createUser(name, email, password, coffeeWish)
-		.then(auth.saveUserSession)
-		.then(sid => {
-			response.cookie('sid', sid, auth.COOKIE_OPTIONS);
-			response.redirect('/');
-		})
-		.catch(error => {
-			console.error(error);
-			response.send(buildPage(`Error`, `<h2>Couldn't sign up, sorry</h2>`));
-		});
+  const { email, coffeeWish, password, name } = request.body;
+  auth
+    .createUser(name, email, password, coffeeWish)
+    .then(auth.saveUserSession)
+    .then((sid) => {
+      response.cookie('sid', sid, auth.COOKIE_OPTIONS);
+      response.redirect('/');
+    })
+    .catch((error) => {
+      console.error(error);
+      response.send(buildPage(`Error`, `<h2>Couldn't sign up, sorry</h2>`));
+    });
 }
 
 module.exports = { get, post };
