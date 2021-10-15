@@ -4,13 +4,18 @@ const { buildPage } = require('../template.js');
 
 function get(request, response) {
   const title = `coffee-login`;
-  const content = `
+  const content = /*html*/ `
     <h2>Nice to have you back!</h2>
-    <form action="login" class="flex flex-column" method="POST">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password">
+
+    <form action="login" class="flex flex-column align-items__c" method="POST">
+    <div class="flex-row margin-bottom">
+      <label for="email" class="flex-row__one">Email</label>
+      <input type="email" id="email" name="email" class="flex-row__two">
+      </div>
+      <div class="flex-row margin-bottom">
+      <label for="password" class="flex-row__one">Password</label>
+      <input type="password" id="password" name="password" class="flex-row__two">
+      </div>
       <button>Log in</button>
     </form>
   `;
@@ -32,7 +37,16 @@ function post(request, response) {
     })
     .catch((error) => {
       console.error(error);
-      response.send(buildPage(`Error`, `<h2>User not found</h2>`));
+      response.send(
+        buildPage(
+          `Error`,
+          /*html*/ `<h2>User not found</h2> <div>
+      <form action="/goback" method="POST" class="centre">
+       <button id="gobackBtn">Go back</button>
+      </form>  
+      </div>`
+        )
+      );
     });
   // console.log('Logging in...');
   // response.redirect('/');

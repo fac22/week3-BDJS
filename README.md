@@ -1,4 +1,4 @@
-# Week3 - BDJS
+# Week3 - BDJS: e-Coffee
 
 Authentication
 
@@ -7,21 +7,30 @@ Authentication
 $ git commit -m "Refactor usability tests.
 
 Co-authored-by: danilo-cupido <81513148+danilo-cupido@users.noreply.github.com>
+
 Co-authored-by: cerealenjoyer <59370143+cerealenjoyer@users.noreply.github.com>
+
 Co-authored-by: 0bubbles0 <77367593+0bubbles0@users.noreply.github.com>
+
 Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>"
 
 ## Roles
 
-UX &rarr; Sasha
-DevOps, Deployment &rarr; Ji
-Facilitator, Scrum &rarr; Barbara
-Quality Assurance &rarr; Danilo
+- UX &rarr; Sasha
+- DevOps, Deployment &rarr; Ji
+- Facilitator, Scrum &rarr; Barbara
+- Quality Assurance &rarr; Danilo
 
-## Our Links
+![](https://i.imgur.com/zFmok2T.png)
+
+## Our Planning Links
 
 - Installation commands (Thanks, Ji :+1:): <https://hackmd.io/MkbkWLQ1QKiqR2VJmfjing>
 - Miro board: <https://miro.com/app/board/o9J_lqhxUgs=/>
+
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lqhxUgs=/?moveToViewport=-615,-218,2469,1150" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+
+
 
 ## Our Mistakes & Fixes
 

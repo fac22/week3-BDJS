@@ -28,15 +28,15 @@ function get(request, response) {
             return /*html*/ `
             <section>
             <h2>Hello ${user.name}</h2>
-            <div>
+            <div class="centre">
           <a href="/edituser"> Edit my details </a>
           </div>
-          <div>
+          <div class="centre">
           <form action="/logout" method="POST">
            <button id="logoutBtn">Log out</button>
           </form>  
-          <div>
-        <div>
+          </div>
+        <div class="centre">
           <form action="/deletecoffee" method="POST">
           <button id="deleteBtn" >I don't like coffee</button>
             </form>
