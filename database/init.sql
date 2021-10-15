@@ -17,6 +17,6 @@ CREATE TABLE sessions (
 );
 
 -- Example data
-INSERT INTO users (name, email, password, drinkorder) VALUES ('Adam', 'adam@adam.com', 'test', 'Latte');
+INSERT INTO users (name, email, password, drinkorder) VALUES ('Adam', 'adam@adam.com', '$2a$10$TacA7NHslEzDumr04YxXmOQ9rO4GsGcSUiCA7awUBrPFtfl.grlKK', 'Latte');
 INSERT INTO sessions (sid, data) VALUES ('abcd', '{"id": 1, "email": "adam@adam.com", "name": "Adam"}');
 COMMIT;
